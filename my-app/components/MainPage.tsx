@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
+import BottomMenu from "./BottomTabs";
 
 const MainPage = () => {
   //user stories data
@@ -22,6 +23,7 @@ const MainPage = () => {
   // Main Page Component
   return (
     <SafeAreaView style={styles.container}>
+      {/* Top menu */}
       <View style={styles.inner}>
         <Image
           source={{
@@ -43,7 +45,6 @@ const MainPage = () => {
           style={[styles.image, { tintColor: "#189df0" }]}
         />
       </View>
-
       {/* Stories Section */}
       <ScrollView
         horizontal
@@ -124,6 +125,8 @@ const MainPage = () => {
             </React.Fragment>
           ))}
       </ScrollView>
+      {/* Navigator bar at the bottom */}
+      <BottomMenu />
     </SafeAreaView>
   );
 };
