@@ -3,7 +3,6 @@ import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-n
 import BottomMenu from "./BottomTabs";
 
 const MainPage = () => {
-  //user stories data
   const stories = [
     { id: "1", name: "Add", image: "https://randomuser.me/api/portraits/women/1.jpg" },
     { id: "2", name: "Jess", image: "https://randomuser.me/api/portraits/men/2.jpg" },
@@ -23,7 +22,7 @@ const MainPage = () => {
   // Main Page Component
   return (
     <SafeAreaView style={styles.container}>
-      {/* Top menu */}
+      {/*Top menu*/}
       <View style={styles.inner}>
         <Image
           source={{
@@ -90,7 +89,6 @@ const MainPage = () => {
                 <Text style={styles.name}>{story.name}</Text>
               </View>
 
-              {/* Injected Grouped Story AFTER the 2nd story */}
               {index === 1 && (
                 <View key="group" style={[styles.storyItem, { marginRight: 15 }]}>
                   <View style={styles.groupWrapper}>
