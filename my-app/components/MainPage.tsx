@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
 
 const MainPage = () => {
+  //user stories data
   const stories = [
     { id: "1", name: "Add", image: "https://randomuser.me/api/portraits/women/1.jpg" },
     { id: "2", name: "Jess", image: "https://randomuser.me/api/portraits/men/2.jpg" },
@@ -18,6 +19,7 @@ const MainPage = () => {
 
   const Pulse = require("react-native-pulse").default;
 
+  // Main Page Component
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
@@ -87,7 +89,7 @@ const MainPage = () => {
                 <Text style={styles.name}>{story.name}</Text>
               </View>
 
-              {/* Inject Grouped Story AFTER the 2nd story (i.e. index === 1) */}
+              {/* Injected Grouped Story AFTER the 2nd story */}
               {index === 1 && (
                 <View key="group" style={[styles.storyItem, { marginRight: 15 }]}>
                   <View style={styles.groupWrapper}>
@@ -126,6 +128,7 @@ const MainPage = () => {
   );
 };
 
+//styles for the MainPage component
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "red",
