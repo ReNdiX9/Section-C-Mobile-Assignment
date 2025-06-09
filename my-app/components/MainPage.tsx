@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
 
 const MainPage = () => {
+{/*list of users*/}
   const stories = [
     { id: "1", name: "Add", image: "https://randomuser.me/api/portraits/women/1.jpg" },
     { id: "2", name: "Jess", image: "https://randomuser.me/api/portraits/men/2.jpg" },
@@ -20,6 +21,7 @@ const MainPage = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+{/*Top menu*/}
       <View style={styles.inner}>
         <Image
           source={{
@@ -87,7 +89,7 @@ const MainPage = () => {
                 <Text style={styles.name}>{story.name}</Text>
               </View>
 
-              {/* Inject Grouped Story AFTER the 2nd story (i.e. index === 1) */}
+    
               {index === 1 && (
                 <View key="group" style={[styles.storyItem, { marginRight: 15 }]}>
                   <View style={styles.groupWrapper}>
