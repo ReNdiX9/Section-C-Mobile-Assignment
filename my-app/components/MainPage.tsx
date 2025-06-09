@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import BottomMenu from "./BottomTabs";
 
 const MainPage = () => {
@@ -19,6 +19,11 @@ const MainPage = () => {
   ];
 
   const Pulse = require("react-native-pulse").default;
+
+  // Function to show an alert when the button is clicked
+  function showAlert() {
+        alert("Alert button clicked!");
+      }
 
   // Main Page Component
   return (
@@ -128,6 +133,7 @@ const MainPage = () => {
             </React.Fragment>
           ))}
       </ScrollView>
+      <button id="alert" onClick={showAlert}>Alert</button>
       {/* Navigator bar at the bottom */}
       <BottomMenu />
     </SafeAreaView>
