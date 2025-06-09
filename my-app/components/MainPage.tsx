@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
 
 const MainPage = () => {
-{/*list of users*/}
+
   const stories = [
     { id: "1", name: "Add", image: "https://randomuser.me/api/portraits/women/1.jpg" },
     { id: "2", name: "Jess", image: "https://randomuser.me/api/portraits/men/2.jpg" },
@@ -19,6 +19,7 @@ const MainPage = () => {
 
   const Pulse = require("react-native-pulse").default;
 
+  // Main Page Component
   return (
     <SafeAreaView style={styles.container}>
 {/*Top menu*/}
@@ -89,7 +90,7 @@ const MainPage = () => {
                 <Text style={styles.name}>{story.name}</Text>
               </View>
 
-    
+
               {index === 1 && (
                 <View key="group" style={[styles.storyItem, { marginRight: 15 }]}>
                   <View style={styles.groupWrapper}>
@@ -128,6 +129,7 @@ const MainPage = () => {
   );
 };
 
+//styles for the MainPage component
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "red",
