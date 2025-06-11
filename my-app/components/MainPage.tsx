@@ -1,5 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, SafeAreaView, View, Image, ScrollView, Text } from "react-native";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BottomMenu from "./BottomTabs";
 
 const MainPage = () => {
@@ -19,6 +20,11 @@ const MainPage = () => {
   ];
 
   const Pulse = require("react-native-pulse").default;
+
+  // Function to show an alert when the button is clicked
+  function showAlert() {
+        alert("Alert button clicked!");
+      }
 
   // Main Page Component
   return (
@@ -128,6 +134,11 @@ const MainPage = () => {
             </React.Fragment>
           ))}
       </ScrollView>
+      <TouchableOpacity style={styles.draft}>
+        <Text style={styles.draftText}>+</Text>
+        <Ionicons name="pencil-outline" style={styles.draftIcon} size={30}/>
+      </TouchableOpacity>
+      <button id="alert" onClick={showAlert}>Alert</button>
       {/* Navigator bar at the bottom */}
       <BottomMenu />
     </SafeAreaView>
@@ -242,6 +253,37 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#fff",
   },
-});
+
+  draft: {
+    position: "absolute",
+    bottom: 90,
+    right: 20,
+    backgroundColor: "#189df0",
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: "center",
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 2, height: 3 },
+    shadowOpacity: 0.6,
+    shadowRadius: 3,
+    zIndex: 10,
+  },
+
+  draftText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    marginTop: 10,
+    marginLeft: -8,
+  },
+
+  draftIcon: {
+    color: "white",
+    position: "relative",
+    top: -14,
+    left: 3,
+}});
 
 export default MainPage;
