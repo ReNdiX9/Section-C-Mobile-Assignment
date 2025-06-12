@@ -1,10 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import BottomMenu from "./BottomTabs";
+import React from "react";
 
 const MainPage = () => {
-
   const stories = [
     { id: "1", name: "Add", image: "https://randomuser.me/api/portraits/women/1.jpg" },
     { id: "2", name: "Jess", image: "https://randomuser.me/api/portraits/men/2.jpg" },
@@ -23,15 +23,13 @@ const MainPage = () => {
 
   // Function to show an alert when the button is clicked
   function showAlert() {
-        alert("Alert button clicked!");
-      }
+    alert("Alert button clicked!");
+  }
 
   // Main Page Component
   return (
     <SafeAreaView style={styles.container}>
-
       {/*Top menu*/}
-
 
       <View style={styles.inner}>
         <Image
@@ -63,8 +61,8 @@ const MainPage = () => {
         {stories
           .filter((story) => story.id !== "3" && story.id !== "4")
           .map((story, index) => (
-            <React.Fragment key={story.id}>
-              <View style={styles.storyItem}>
+            <>
+              <View style={styles.storyItem} key={story.id}>
                 <View style={styles.avatarWrapper}>
                   {index === 1 && (
                     <>
@@ -99,9 +97,8 @@ const MainPage = () => {
                 <Text style={styles.name}>{story.name}</Text>
               </View>
 
-
               {index === 1 && (
-                <View key="group" style={[styles.storyItem, { marginRight: 15 }]}>
+                <View style={[styles.storyItem, { marginRight: 15 }]} key={`${story.id}-group`}>
                   <View style={styles.groupWrapper}>
                     <Pulse
                       color="#7b2cbf"
@@ -131,14 +128,14 @@ const MainPage = () => {
                   <Text style={styles.name}>Vera +2</Text>
                 </View>
               )}
-            </React.Fragment>
+            </>
           ))}
       </ScrollView>
       <TouchableOpacity style={styles.draft}>
         <Text style={styles.draftText}>+</Text>
-        <Ionicons name="pencil-outline" style={styles.draftIcon} size={30}/>
+        <Ionicons name="pencil-outline" style={styles.draftIcon} size={30} />
       </TouchableOpacity>
-      <button id="alert" onClick={showAlert}>Alert</button>
+
       {/* Navigator bar at the bottom */}
       <BottomMenu />
     </SafeAreaView>
@@ -148,7 +145,7 @@ const MainPage = () => {
 //styles for the MainPage component
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
+    backgroundColor: "white",
     flex: 1,
     minHeight: "100%",
     width: "100%",
@@ -256,7 +253,7 @@ const styles = StyleSheet.create({
 
   draft: {
     position: "absolute",
-    bottom: 90,
+    bottom: 70,
     right: 20,
     backgroundColor: "#189df0",
     width: 60,
@@ -284,6 +281,7 @@ const styles = StyleSheet.create({
     position: "relative",
     top: -14,
     left: 3,
-}});
+  },
+});
 
 export default MainPage;
