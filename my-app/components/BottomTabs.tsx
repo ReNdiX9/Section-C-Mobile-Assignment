@@ -1,4 +1,3 @@
-// components/BottomMenu.js
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
@@ -12,7 +11,10 @@ export default function BottomMenu() {
       <TouchableOpacity style={styles.item}>
         <Ionicons name="search-outline" size={24} color="gray" />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => alert("Button was pressed")}
+      >
         <Ionicons name="notifications-outline" size={24} color="gray" />
       </TouchableOpacity>
       <TouchableOpacity style={styles.item}>
